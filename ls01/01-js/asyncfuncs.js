@@ -34,7 +34,6 @@ console.log('work');
 // async
 function getProgramsCallback(programs) {
    console.log(programs);
-
 }
 
 function getPrgorams() {
@@ -52,3 +51,10 @@ function getPrgorams() {
 
 getPrgorams().then(getProgramsCallback);
 console.log('1');
+
+
+fetch('https://pokeapi.co/api/v2/pokemon/ditto').then(function (res) {
+   return res.json()
+}).then(function (res) {
+   console.log(res)
+})
