@@ -1,0 +1,4 @@
+<figure *ngIf="member; else loading">
+    <figcaption>{{member.FIRSTNAME}} {{member.LASTNAME}}</figcaption>
+</figure>
+<ng-template #loading>Loading....</ng-template>
