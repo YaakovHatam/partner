@@ -1,0 +1,8 @@
+<partner-header></partner-header>
+<div fxLayout>
+   <partner-songs-list [mode]="songsListComponentModes.songs" title="available songs" fxFlex="20" [songs]="songs">
+   </partner-songs-list>
+   <partner-video-player fxFlex="60"></partner-video-player>
+   <partner-songs-list [mode]="songsListComponentModes.playlist" title="selected songs" fxFlex="20" [songs]="playlist">
+   </partner-songs-list>
+</div>

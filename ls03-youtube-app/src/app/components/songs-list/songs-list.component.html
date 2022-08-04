@@ -1,0 +1,9 @@
+<h2>{{title}}</h2>
+<section fxLayout="column">
+   <div class="song" *ngFor="let song of songs">
+      <button kendoButton [icon]="mode == songsListComponentModes.songs ? 'plus' : 'minus'"
+         (click)="onSongClick(song.id)"></button>
+      {{song.name}}
+   </div>
+
+</section>
