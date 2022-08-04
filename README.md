@@ -1,6 +1,6 @@
 # partner
 
-https://prod.liveshare.vsengsaas.visualstudio.com/join?04FC74BFEE239D1CFC42A086C4D96892BCD2
+https://prod.liveshare.vsengsaas.visualstudio.com/join?EE9789076EF7C60CA90A2356402562AE0D44
 
 ## Lesson 3
 - Components exercise
