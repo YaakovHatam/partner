@@ -2,7 +2,7 @@
 <section fxLayout="column">
    <div class="song" *ngFor="let song of songs">
       <button kendoButton [icon]="mode == songsListComponentModes.songs ? 'plus' : 'minus'"
-         (click)="onSongClick(song.id)"></button>
+         (click)="onSongClick(song)"></button>
       {{song.name}}
    </div>
 

@@ -32,10 +32,12 @@ export class SongsListComponent implements OnInit {
       // this.songs = this.songsService.songs;
    }
 
-   onSongClick(songId: number) {
-
-      this.songsService[this.mode ===
-         this.songsListComponentModes.songs ? 'addToPlaylist' : 'removeFromPlaylist'](songId);
+   onSongClick(song: SongModel) {
+      if (this.mode === this.songsListComponentModes.songs) {
+         this.songsService.addToPlaylist(song);
+      } else {
+         this.songsService.removeFromPlaylist(song.id);
+      }
    }
 
 }

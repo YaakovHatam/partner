@@ -18,8 +18,11 @@ export class AppComponent implements OnInit {
    }
 
    ngOnInit(): void {
-      this.playlist = this.songsService.playlist;
-      this.songs = this.songsService.songs;
+      this.songsService.playlist.subscribe(res => {
+         console.log(res);
+         this.playlist = res
+      });
+      this.songsService.getSongs().subscribe(res => this.songs = res);
    }
 
 }

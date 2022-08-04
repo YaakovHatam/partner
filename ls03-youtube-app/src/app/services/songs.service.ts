@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { SongModel } from '../models/song.model';
 
 @Injectable({
@@ -6,34 +8,33 @@ import { SongModel } from '../models/song.model';
 })
 export class SongsService {
 
-   playlist: SongModel[] = [];
+   private _playlist: SongModel[] = [];
+   playlist: BehaviorSubject<SongModel[]> = new BehaviorSubject<SongModel[]>([]);
 
-   songs: SongModel[] = [{
-      name: 'sound of silence',
-      href: 'eeN21D_E2Rk'
-   }, {
-      name: 'Scorpions - Send Me An Angel | Piano Cover',
-      href: 'oDoEQ0fZJ8o'
-   }].map((song, i) => ({ id: i + 1, ...song }));
+   constructor(private httpClient: HttpClient) {
 
-   constructor() { }
+   }
+
+   getSongs() {
+      return this.httpClient.get<SongModel[]>('/assets/songs.json');
+   }
 
    /**
     * add to user's playlist a song from the existing songs array
     * @param songId the song id
     */
-   addToPlaylist(songId: number) {
-      const songToAdd = this.songs.find(s => s.id === songId);
-      if (songToAdd) {
-         this.playlist.push(songToAdd);
-      }
+   addToPlaylist(song: SongModel) {
+      this._playlist.push(song);
+      this.playlist.next(this._playlist)
+
    }
 
    removeFromPlaylist(songId: number) {
       // the reference way:
-      const songIndex = this.playlist.findIndex(s => s.id === songId);
-      this.playlist.splice(songIndex, 1);
+      //const songIndex = this.playlist.findIndex(s => s.id === songId);
+      //this.playlist.splice(songIndex, 1);
 
-      // this.playlist = this.playlist.filter(s => s.id !== songId)
+      this._playlist = this._playlist.filter(s => s.id !== songId);
+      this.playlist.next(this._playlist);
    }
 }
