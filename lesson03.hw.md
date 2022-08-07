@@ -14,7 +14,7 @@ We will have 2 services in order to achieve these capabilities:
 - One service named `player.service.ts` that will hold the state of the player and the songs that the user added to the playlist
 - One service named `songs.service.ts` that will hold the list of songs that can be added to the user's playlist
 
-
+## Visual examples
 Screenshow of our app after Lesson 02:
 ![the app before lesson 03 h.w.](https://raw.githubusercontent.com/YaakovHatam/partner/master/hw/after-lesson-02.png)
 
