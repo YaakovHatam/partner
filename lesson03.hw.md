@@ -18,3 +18,5 @@ We will have 2 services in order to achieve these capabilities:
 Screenshow of our app after Lesson 02:
 ![the app before lesson 03 h.w.](https://raw.githubusercontent.com/YaakovHatam/partner/master/hw/after-lesson-02.png)
 
+How it should look and behave after this H.w.:
+![the app after lesson 03 h.w.](https://raw.githubusercontent.com/YaakovHatam/partner/master/hw/after-lesson-03.gif)
